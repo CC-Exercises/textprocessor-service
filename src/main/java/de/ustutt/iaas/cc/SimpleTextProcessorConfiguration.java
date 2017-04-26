@@ -1,10 +1,24 @@
 package de.ustutt.iaas.cc;
 
-import io.dropwizard.Configuration;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.hibernate.validator.constraints.*;
-import javax.validation.constraints.*;
+
+import io.dropwizard.Configuration;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 
 public class SimpleTextProcessorConfiguration extends Configuration {
-    // TODO: implement service configuration
+
+    @JsonProperty("swagger")
+    public SwaggerBundleConfiguration swaggerBundleConfiguration;
+
+    private String serviceInstanceID;
+
+    @JsonProperty("serviceInstanceID")
+    public String getServiceInstanceID() {
+	return serviceInstanceID;
+    }
+
+    public void setServiceInstanceID(String serviceInstanceID) {
+	this.serviceInstanceID = serviceInstanceID;
+    }
+
 }
