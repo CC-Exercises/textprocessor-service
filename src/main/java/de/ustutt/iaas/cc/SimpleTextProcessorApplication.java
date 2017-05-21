@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import de.ustutt.iaas.cc.core.ConfigureLatencyTask;
 import de.ustutt.iaas.cc.resources.TextProcessorResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
@@ -52,6 +53,8 @@ public class SimpleTextProcessorApplication extends Application<SimpleTextProces
 	// create and register resource class
 	final TextProcessorResource root = new TextProcessorResource(myID);
 	environment.jersey().register(root);
+	// add task for setting latency
+	environment.admin().addTask(new ConfigureLatencyTask());
     }
 
 }
