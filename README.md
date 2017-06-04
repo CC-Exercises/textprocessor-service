@@ -6,7 +6,7 @@ How to start the SimpleTextProcessor application
 ---
 
 1. Run `mvn clean install` to build your application
-2. Start application with `java -jar target/SimpleTextProcessor-0.1.0.jar server config.yml`
+2. Start application with `java -jar target/SimpleTextProcessor-0.2.0.jar server config.yml`
 3. To check that your application is running, POST a string to `http://localhost/api`
 
 Processing Latency
@@ -29,7 +29,7 @@ Install and run on Ubuntu
 Tested with Ubuntu Server 16.04 LTS on AWS EC2. During the installation, the service will be configured to automatically start during system boot.
 
 ```
-wget -qO- https://github.com/F7502/textprocessor-service/releases/download/v0.1.0/install-and-run.sh | sudo bash
+wget -qO- https://github.com/F7502/textprocessor-service/releases/download/v0.2.0/install-and-run.sh | sudo bash
 ```
 
 or
@@ -37,9 +37,9 @@ or
 ```
 sudo apt-get update  
 sudo apt-get install --yes openjdk-8-jre-headless  
-wget https://github.com/F7502/textprocessor-service/releases/download/v0.1.0/SimpleTextProcessor-0.1.0.jar  
-wget https://github.com/F7502/textprocessor-service/releases/download/v0.1.0/config.yml  
-wget https://github.com/F7502/textprocessor-service/releases/download/v0.1.0/textprocessor  
+wget https://github.com/F7502/textprocessor-service/releases/download/v0.2.0/SimpleTextProcessor-0.2.0.jar  
+wget https://github.com/F7502/textprocessor-service/releases/download/v0.2.0/config.yml  
+wget https://github.com/F7502/textprocessor-service/releases/download/v0.2.0/textprocessor  
 sudo mv textprocessor /etc/init.d/  
 sudo chmod +x /etc/init.d/textprocessor  
 sudo update-rc.d textprocessor defaults  
