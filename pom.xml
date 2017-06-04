@@ -50,6 +50,14 @@
 			<artifactId>dropwizard-swagger</artifactId>
 			<version>${dropwizard-swagger.version}</version>
 		</dependency>
+
+		<!-- support for freemarker templates in config.yml -->
+		<dependency>
+			<groupId>de.thomaskrille</groupId>
+			<artifactId>dropwizard-template-config</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

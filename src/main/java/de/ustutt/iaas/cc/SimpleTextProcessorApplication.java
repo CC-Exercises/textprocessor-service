@@ -6,6 +6,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.base.Charsets;
+
+import de.thomaskrille.dropwizard_template_config.TemplateConfigBundle;
+import de.thomaskrille.dropwizard_template_config.TemplateConfigBundleConfiguration;
 import de.ustutt.iaas.cc.core.ConfigureLatencyTask;
 import de.ustutt.iaas.cc.resources.TextProcessorResource;
 import io.dropwizard.Application;
@@ -38,6 +42,9 @@ public class SimpleTextProcessorApplication extends Application<SimpleTextProces
 		return configuration.swaggerBundleConfiguration;
 	    }
 	});
+	// freemaker templates in config.yml
+	bootstrap.addBundle(new TemplateConfigBundle(
+		new TemplateConfigBundleConfiguration().charset(Charsets.UTF_8).outputPath("config_generated.yml")));
     }
 
     @Override
